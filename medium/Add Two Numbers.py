@@ -1,8 +1,30 @@
 # Definition for singly-linked list.
 class Node:
-    def __init__(self, data):
+    def __init__(self, data=None, next=None):
         self.data = data
         self.next = next
+        
+        
+def printList(head):
+ 
+    ptr = head
+    while ptr:
+        print(ptr.data, end=' —> ')
+        ptr = ptr.next
+    print('None')
+
+def pop(headRef):
+ 
+    # underflow condition
+    if headRef is None:
+        return None
+ 
+    result = headRef.data       # pull out data before the node is deleted
+    headRef = headRef.next      # unlink the head node for the caller
+ 
+    print('The popped node is', result)
+ 
+    return headRef
 
 class Link:
     def __init__(self):
@@ -10,9 +32,6 @@ class Link:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        
-        head = None
-        data = None
         
         l1arr = []
         l2arr = []
@@ -41,6 +60,27 @@ class Solution:
         finalsum = l1val + l2val
         string = str(finalsum)
         
-        for i in range(len(string)-1,-1,-1):
-            print(string[i])
+        finalist = Link()
+        finalist = head = Node(string[i])
         
+        for i in range(len(string)-2,-1,-1):
+            finalist.next = Node(string[i])
+            finalist = finalist.next
+            
+            
+            
+        # points to the head node of the linked list
+        head = None
+ 
+        # construct a linked list
+        for i in reversed(range(1, 5)):
+            head = Node(i, head)
+ 
+        head = pop(head)
+ 
+        # print remaining linked list
+        printList(head)
+ 
+            
+        
+            
