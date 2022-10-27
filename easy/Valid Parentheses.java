@@ -40,6 +40,9 @@ class Solution {
         }
         } catch(Exception e) {
             return false;
+            // if the input string is ending parentheses,
+            // it will attempt to pop stack with no items
+            // triggering error... technically this works
         }
         
         if (stack.isEmpty()){
