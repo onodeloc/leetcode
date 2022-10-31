@@ -1,6 +1,9 @@
 import java.util.Arrays;
 //this will need to be commented out for the code to run on LC
 
+// Runtime: 65 ms, faster than 39.52% of Java online submissions for Two Sum.
+// Memory Usage: 42.4 MB, less than 92.91% of Java online submissions for Two Sum.
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         
