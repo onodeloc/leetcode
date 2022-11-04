@@ -1,4 +1,4 @@
-//super unoptimized
+// 100/8
 
 class Solution {
     public int lengthOfLastWord(String s) {
@@ -9,18 +9,18 @@ class Solution {
         // reset on space
 
         int currLen = 0;
-        int lastLen = 0;
 
-        for (int i = 0; i < s.length(); i++){
+        for (int i = s.length() - 1; i > -1; i--){
             if (s.charAt(i) != ' '){
                 currLen++;
-                lastLen = currLen;
             } else {
-                currLen = 0;
+                if (currLen > 0){
+                    return currLen;
+                }
             }
         }
 
-        return lastLen;
+        return currLen;
 
     }
 }
