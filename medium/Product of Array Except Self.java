@@ -7,7 +7,7 @@ class Solution {
         // return product of all other numbers in array except self
         // must be in O(n) time...
         // each number must be kept track of iteratively
-        // cannot use division operator (we can cheat that)
+        // cannot use division operator (we can skip that)
         
         // if one zero, answer during zero is product
         // if two zero, return arr of 0's
