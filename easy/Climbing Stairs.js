@@ -1,5 +1,7 @@
-// 5/7
-// this is just the fibonacci sequence
+// 54/41
+// ...now I understand why using an object is better here
+// once we define the object value, its O(1) to access
+// as opposed to .includes, which is O(n)
 
 /**
  * @param {number} n
@@ -11,13 +13,13 @@
     // each time i can either climb 1 or 2 steps
     // how many ways to reach the top of the staircase?
 
-    const imTired = (n,memo=[]) => {
+    const imTired = (n,memo={}) => {
 
         if (n < 2 ){
             return 1;
         }
 
-        if (memo.includes(n)){
+        if (memo[n] > 0){
             return memo[n];
         } else {
             memo[n] = imTired(n - 1, memo) + imTired (n - 2, memo);
